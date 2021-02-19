@@ -62,7 +62,7 @@ This script produces different types of outputs:
 Example of a geographical repartition output from this script:
 
 
-      B. DMQC related scripts
+            B. DMQC related scripts
 1.	DMQC statistics (get_DMQC_stats.m)
 Description of the script:
 Gets DMQC statistics for given floats.
