@@ -61,8 +61,7 @@ This script produces different types of outputs:
 -	A geographical repartition of the flags per WMOs to permit a specific float tracking for example.
 Example of a geographical repartition output from this script:
 
-
-    B.	DMQC related scripts
+      B. DMQC related scripts
 1.	DMQC statistics (get_DMQC_stats.m)
 Description of the script:
 Gets DMQC statistics for given floats.
@@ -81,7 +80,7 @@ Notes:
 - (3) Format options (number of floats per figure and yaxis ticks size) can be modified
  
  
-    C.	TOOLBOX
+      C. TOOLBOX
     
 Name	Description	Auxiliary functions
 Scripts
