@@ -1,7 +1,7 @@
 # EA_RISE_WP2.1
 Repository for the scripts created during the Work Package 2.1 of the Euro-Argo RISE project.
 
-      A.	Plot fleet configuration values (CONFIG_fleet_status.m)<br />
+      A.	Plot fleet configuration values (CONFIG_fleet_status.m)
 Script description:<br />
 Plots the status of a list of floats regarding a configuration parameter and splitting the results depending on the country, deployment date and float model<br />
 3 outputs produced:<br />
@@ -11,7 +11,7 @@ Plots the status of a list of floats regarding a configuration parameter and spl
 Output Figure 3 is presented hereafter:<br />
 ![alt text](https://github.com/euroargodev/Argo_life_expectancy_analyses/blob/main/Images/01_config_fleet_status.png?raw=true)
 
-	  B. Mapping of the technical parameters (map_tech_param.m)<br />
+	  B. Mapping of the technical parameters (map_tech_param.m)
 Script description:<br />
 Plot a scatter of a tech, traj or config parameter in a map (lon, lat) using a threshold:<br />
 - colormap_thres: if 'above', colormap is use for points above threshold. If 'under', colormap is use for points under threshold.
@@ -26,7 +26,7 @@ NOTES:<br />
 - Figure: Scatter of the floats last position colored with a colorbar representing the value taken by the parameter entered as input (figure shown below)
 ![alt text](https://github.com/euroargodev/Argo_life_expectancy_analyses/blob/main/Images/02_map_tech_param.jpg?raw=true)
 
-	  C. Plot configuration parameters survival rates (survival_config.m)<br />
+	  C. Plot configuration parameters survival rates (survival_config.m)
 Script description:<br />
 Plots survival rates depending on configuration values for a given config parameter (given in number of cycles, vertical_km and float age). This script takes as an input a WMOs list.<br />
 NOTES:<br />
@@ -44,7 +44,7 @@ The matrices of the resulting survival rate computing are then saved as ".mat" f
 Outputs produced:<br />
 Matrices: Matrices of the computed survival rates for the list of floats provided as input. These ".mat" file are then used in the "Plot_survival_rates.m" script presented hereafter.<br />
 
-	  E. Plot survival rates (Plot_survival_rates.m)<br />
+	  E. Plot survival rates (Plot_survival_rates.m)
 Script description:<br />
 This script permits to plot different survival rates computations stored as variables (.mat). It permits comparison between different floats samples, models, etc.<br />
 The survival rates are computed according to different x-axis: number of cycles, float age and vertical distance traveled (in km)<br />
@@ -55,7 +55,7 @@ The survival rates are computed according to different x-axis: number of cycles,
 Herafter is presented an example of the Figure 1 output for a specific float model (Arvor-I) in different deployment regions.<br />
 ![alt text](https://github.com/euroargodev/Argo_life_expectancy_analyses/blob/main/Images/04_plot_survival_rates.png?raw=true)
 
-	  F. Groundings repartition (Map_groundings.m)<br />
+	  F. Groundings repartition (Map_groundings.m)
 Script description:<br />
 The script was developed in order to provides some discussing materials for the WP6 (Marginal Seas focus) of the EA RISE project. It was then used in the WP2.1 report to represent the impact of the groundings on the life expectancy of a float sample and to help quantify it.<br />
 Description of the script:<br />
@@ -76,7 +76,11 @@ The figure below presents an example of the output Figure 2: repartition of the 
 ![alt text](https://github.com/euroargodev/Argo_life_expectancy_analyses/blob/main/Images/05_groundings.png?raw=true)<br />
 
 
-		TOOLBOX
+
+
+
+	      TOOLBOX<br />
+
 Name & Description of the auxiliary functions used in the different scripts presented above:<br />
 - read_csv:	read a csv file and generates an struct with file variables	
 - get_floats_filepath: gets files paths from ar_index_global_meta.txt file for given floats and optionally creates a .txt file	
