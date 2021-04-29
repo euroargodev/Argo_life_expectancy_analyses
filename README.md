@@ -76,33 +76,18 @@ The figure below presents an example of the output Figure 2: repartition of the 
 ![alt text](https://github.com/euroargodev/Argo_life_expectancy_analyses/blob/main/Images/05_groundings.png?raw=true)<br />
 
 
-TOOLBOX
+		TOOLBOX
 Name & Description of the auxiliary functions used in the different scripts presented above:<br />
-- map_tech_param: plot a scatter of a tech, traj or config parameter in a map (lon, lat) using a threshold	read_csv
-- get_floats_data_gdac
-- M_MAP: matlab package
-- export_fig: package
-- get_csv_QGIS
-- get_phases_times: calculates duration and speed of floats in each cycle phase (descent to park, parking, descent to profile, profile drift and ascent to surface)	suptitle
-- get_floats_data_gdac
-- get_floats_filespath
-- export_fig
-- get_last_config_values: get list of last configuration parameters values	
-- read_csv
-- get_floats_data_gdac<br />
 - read_csv:	read a csv file and generates an struct with file variables	
-- get_floats_files_paths: gets files paths from ar_index_global_meta.txt file for given floats and optionally creates a .txt file	
-- get_data_from_index: gets chosen variables from index file for given floats	
-- get_floats_data_gdac: gets data from tech, traj, aux, meta or index files	get_traj_param
-- get_tech_param
-- get_configparam_meta
-- get_data_from_index
-- get_floats_data_gadc_format: gets data from tech, traj, aux or meta file and formats it to have the same number of cycles for the same float	get_traj_param
-- get_tech_param
-- get_configparam_meta
-- get_data_from_index
-- get_configparam_meta:	gets all cycles values of a list of given configuration parameters from a meta file (one float)	
-- get_tech_param: gets all cycles values of a list of given technical parameters from a tech file (one float)	
-- get_traj_param: gets all values of a list of given parameters from a trajectory file	
-- get_traj_param_AUX		
+- get_floats_filepath: gets files paths from ar_index_global_meta.txt file for given floats and optionally creates a .txt file	
+- get_floats_data_gdac_v3_FINAL: gets data from tech, traj, aux or meta file and formats it to have the same number of cycles for the same float	get_traj_param
+- calculate_CyclePeriod
+- calculate_CTDPoints
+- format_data_for_plotting
+- get_matrix_barplot: Make a matrix for grouped bar plots
+- suptitle
+- M_MAP: Package permitting to plot map , with coastlines, certain isobaths, etc... Visit the following link to download the package and access the package documentation: [M_map](https://www.eoas.ubc.ca/~rich/map.html)
+- export_fig_package: PAckage to export a figure as png in a specific folder
+- get_csv_QGIS: Create a csv file permitting to easily re-create the plot in QGIS
+- get_verticalkm_age_multiprof: Compute the vertical distance traveled by a float (in kms) taking into consideration the number of profiles made and the max pressure reached for each profile.
 
