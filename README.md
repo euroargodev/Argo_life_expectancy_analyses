@@ -79,7 +79,7 @@ The figure below presents an example of the output Figure 2: repartition of the 
 
 
 
-	      TOOLBOX<br />
+	      TOOLBOX
 
 Name & Description of the auxiliary functions used in the different scripts presented above:<br />
 - read_csv:	read a csv file and generates an struct with file variables	
