@@ -37,7 +37,7 @@ xx output:<br />
 Figure: one figure for one value taken by the config pramater entered as input. The survival rates curves are presented according to the number of cycles made, vertical kilometers traveled and age and are grouped according to the float model.<br />
 ![alt text](https://github.com/euroargodev/Argo_life_expectancy_analyses/blob/main/Images/03_config_survival_rate.jpg?raw=true)
 
-	  C. Compute survival rates (compute_survival_rate.m)<br />
+	  D. Compute survival rates (compute_survival_rate.m)
 Script description:<br />
 This script compute the survival rates calculations of a given list of floats, according to the number of cycles made, the vertical_km traveled and the float age.<br />
 The matrices of the resulting survival rate computing are then saved as ".mat" file in the export folder specified at the beginning of the script.<br />
