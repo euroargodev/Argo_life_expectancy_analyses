@@ -3,6 +3,9 @@
 % and spliting the results depending on the country, deployment date and 
 % float model
 %
+
+
+%
 % Input (below)
 % - list_dir: path to .csv or .txt file with floats list, including country
 %       deployment date and model information. Format should be like file
@@ -20,7 +23,7 @@
 % - Figure config param value per cycle. 
 % * All figures are saved in output_folder
 %
-% Auxiliary functions
+% Auxiliary functions (from Toolbox)
 %    read_csv
 %    get_floats_filespath
 %    get_floats_data_gdac

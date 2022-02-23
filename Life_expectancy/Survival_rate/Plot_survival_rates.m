@@ -26,258 +26,242 @@ close all
 
 % INPUT
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-output_folder = '/home1/datahome/co_arg/larduini/Exports/Survival_rates/EA_ARVOR_I/Figs'
+% number of variables to compare/plot
+% var_name{1} = 'ALL_ALTO';
+% var_name{2} = 'ALL_APEX';
+% var_name{1} = 'APEX_BGC';
+% var_name{1} = 'ALL_APEX_D';
+% var_name{1} = 'ALL_ARVOR';
+var_name{1} = 'ALL_ARVOR_A';
+% var_name{6} = 'DEAD_ARVOR_I';
+% var_name{2} = 'ALL_ARVOR_I_DO';
+% var_name{1} = 'ALL_ARVOR_D';
+% var_name{2} = 'DEAD_ARVOR_D';
+% var_name{6} = 'ALL_HM2000';
+% var_name{7} = 'ALL_NAVIS_A';
+% var_name{8} = 'ALL_NAVIS_EBR';
+% var_name{2} = 'NAVIS_A_BGC';
+% var_name{3} = 'NAVIS_EBR_BGC';
+% var_name{9} = 'ALL_NEMO';
+% var_name{3} = 'ALL_NINJA_D';
+% var_name{11} = 'ALL_NOVA';
+% var_name{12} = 'ALL_PROVOR';
+% var_name{13} = 'ALL_PROVOR_II';
+% var_name{4} = 'ALL_PROVOR_III';
+% var_name{5} = 'ALL_PROVOR_IV';
+% var_name{6} = 'ALL_PROVOR_V';
+% var_name{17} = 'ALL_S2A';
+% var_name{18} = 'ALL_S2X';
+% var_name{4} = 'ALL_SOLO_D';
+% var_name{5} = 'ALL_SOLO_D_MRV';
+% var_name{21} = 'ALL_SOLO_II';
+
+% var_name{1} = 'ARCTIC';
+% var_name{2} = 'ATLANTIC';
+% var_name{3} = 'PACIFIC';
+% var_name{4} = 'INDIAN';
+% var_name{5} = 'SOUTHERN';
+% var_name{5} = 'MEDITERRANEAN';
+% var_name{6} = 'ARVOR_I_Open_Ocean';
+% var_name{7} = 'BLACK';
+% var_name{8} = 'BALTIC';
+% var_name{9} = 'BANDA_SEA';
+% var_name{10} = 'CARIBBEAN';
+% var_name{11} = 'MEXICO_GULF';
+% var_name{1} = 'APEX_D_JAPAN';
+% var_name{2} = 'APEX_D_UK';
+% var_name{3} = 'APEX_D_USA';
+
+% var_name{1} = 'INTERNATIONAL_GLOBAL_IRIDIUM_ARRAY';
+% var_name{2} = 'INTERNATIONAL_Marginal_Seas_IRIDIUM_ARRAY';
+% var_name{3} = 'INTERNATIONAL_Open_Ocean_IRIDIUM_ARRAY';
+
+% var_name{4} = 'EUROPEAN_GLOBAL_IRIDIUM_ARRAY';
+% var_name{5} = 'EUROPEAN_Marginal_Seas_IRIDIUM_ARRAY';
+% var_name{6} = 'EUROPEAN_Open_Ocean_IRIDIUM_ARRAY';
+
+
+% filepath to where the .mat from the "compute_survival_rate.m" are stored
+% data_folder{1} = '/home1/datahome/co_arg/larduini/Exports/Survival_rates/Comparison_models/ALTO/';
+% data_folder{2} = '/home1/datahome/co_arg/larduini/Exports/Survival_rates/Comparison_models/APEX/';
+% data_folder{1} = '/home1/datahome/co_arg/larduini/Exports/Survival_rates/Comparison_models/APEX_D/';
+data_folder{1} = '/home1/datahome/co_arg/larduini/Exports/Survival_rates/Comparison_models/ARVOR_A/';
+% data_folder{6} = '/home1/datahome/co_arg/larduini/Exports/Survival_rates/Comparison_models/ARVOR_I_DO/';
+% data_folder{2} = '/home1/datahome/co_arg/larduini/Exports/Survival_rates/Comparison_models/ARVOR_I_DO/';
+% data_folder{1} = '/home1/datahome/co_arg/larduini/Exports/Survival_rates/Comparison_models/ARVOR_D/';
+% data_folder{2} = '/home1/datahome/co_arg/larduini/Exports/Survival_rates/Comparison_models/ARVOR_D/';
+% data_folder{1} = '/home1/datahome/co_arg/larduini/Exports/Survival_rates/Comparison_basins/APEX_D/';
+% data_folder{2} = '/home1/datahome/co_arg/larduini/Exports/Survival_rates/Comparison_basins/APEX_D/';
+% data_folder{3} = '/home1/datahome/co_arg/larduini/Exports/Survival_rates/Comparison_basins/APEX_D/';
+% data_folder{6} = '/home1/datahome/co_arg/larduini/Exports/Survival_rates/Comparison_models/HM2000/';
+% data_folder{7} = '/home1/datahome/co_arg/larduini/Exports/Survival_rates/Comparison_models/NAVIS_A/';
+% data_folder{8} = '/home1/datahome/co_arg/larduini/Exports/Survival_rates/Comparison_models/NAVIS_EBR/';
+% data_folder{9} = '/home1/datahome/co_arg/larduini/Exports/Survival_rates/Comparison_models/NEMO/';
+% data_folder{3} = '/home1/datahome/co_arg/larduini/Exports/Survival_rates/Comparison_models/NINJA_D/';
+% data_folder{11} = '/home1/datahome/co_arg/larduini/Exports/Survival_rates/Comparison_models/NOVA/';
+% data_folder{12} = '/home1/datahome/co_arg/larduini/Exports/Survival_rates/Comparison_models/PROVOR/';
+% data_folder{13} = '/home1/datahome/co_arg/larduini/Exports/Survival_rates/Comparison_models/PROVOR_II/';
+% data_folder{14} = '/home1/datahome/co_arg/larduini/Exports/Survival_rates/Comparison_models/PROVOR_III/';
+% data_folder{15} = '/home1/datahome/co_arg/larduini/Exports/Survival_rates/Comparison_models/PROVOR_IV/';
+% data_folder{16} = '/home1/datahome/co_arg/larduini/Exports/Survival_rates/Comparison_models/PROVOR_V/';
+% data_folder{17} = '/home1/datahome/co_arg/larduini/Exports/Survival_rates/Comparison_models/S2A/';
+% data_folder{18} = '/home1/datahome/co_arg/larduini/Exports/Survival_rates/Comparison_models/S2X/';
+% data_folder{4}= '/home1/datahome/co_arg/larduini/Exports/Survival_rates/Comparison_models/SOLO_D/';
+% data_folder{5} = '/home1/datahome/co_arg/larduini/Exports/Survival_rates/Comparison_models/SOLO_D_MRV/';
+% data_folder{21} = '/home1/datahome/co_arg/larduini/Exports/Survival_rates/Comparison_models/SOLO_II/';
+
+
+% data_folder{1} = '/home1/datahome/co_arg/larduini/Exports/Survival_rates/Comparison_basins/ARVOR_I_BASINS/ARVOR_I_ARCTIC/';
+% data_folder{2} = '/home1/datahome/co_arg/larduini/Exports/Survival_rates/Comparison_basins/ARVOR_I_BASINS/ARVOR_I_ATLANTIC/';
+% data_folder{3}= '/home1/datahome/co_arg/larduini/Exports/Survival_rates/Comparison_basins/ARVOR_I_BASINS/ARVOR_I_PACIFIC/';
+% data_folder{4} = '/home1/datahome/co_arg/larduini/Exports/Survival_rates/Comparison_basins/ARVOR_I_BASINS/ARVOR_I_INDIAN/';
+% data_folder{5} = '/home1/datahome/co_arg/larduini/Exports/Survival_rates/Comparison_basins/ARVOR_I_BASINS/ARVOR_I_SOUTHERN/';
+% data_folder{5} = '/home1/datahome/co_arg/larduini/Exports/Survival_rates/Comparison_basins/ARVOR_I_BASINS/ARVOR_I_MEDITERRANEAN/';
+% data_folder{6} = '/home1/datahome/co_arg/larduini/Exports/Survival_rates/Comparison_basins/ARVOR_I_BASINS/Open_Ocean_ARVOR_I/';
+% data_folder{7} = '/home1/datahome/co_arg/larduini/Exports/Survival_rates/Comparison_basins/ARVOR_I_BASINS/ARVOR_I_BLACK/';
+% data_folder{8} = '/home1/datahome/co_arg/larduini/Exports/Survival_rates/Comparison_basins/ARVOR_I_BASINS/ARVOR_I_BALTIC/';
+% data_folder{9} = '/home1/datahome/co_arg/larduini/Exports/Survival_rates/Comparison_basins/ARVOR_I_BASINS/ARVOR_I_BANDA_SEA/';
+% data_folder{10} = '/home1/datahome/co_arg/larduini/Exports/Survival_rates/Comparison_basins/ARVOR_I_BASINS/ARVOR_I_CARIBBEAN/';
+% data_folder{11} = '/home1/datahome/co_arg/larduini/Exports/Survival_rates/Comparison_basins/ARVOR_I_BASINS/ARVOR_I_MEXICO_GULF/';
+
+% data_folder{1} = '/home1/datahome/co_arg/larduini/Exports/Survival_rates/Comparison_EA_Intern/';
+% data_folder{2} = '/home1/datahome/co_arg/larduini/Exports/Survival_rates/Comparison_EA_Intern/';
+% data_folder{3} = '/home1/datahome/co_arg/larduini/Exports/Survival_rates/Comparison_EA_Intern/';
+
+% data_folder{4} = '/home1/datahome/co_arg/larduini/Exports/Survival_rates/Comparison_EA_Intern/';
+% data_folder{5} = '/home1/datahome/co_arg/larduini/Exports/Survival_rates/Comparison_EA_Intern/';
+% data_folder{6} = '/home1/datahome/co_arg/larduini/Exports/Survival_rates/Comparison_EA_Intern/';
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+output_folder = '/home1/datahome/co_arg/larduini/Exports/Survival_rates/Comparison_models/Figs/';
+fig_path = [output_folder '/' 'SurvivalRate_comparison_EA_Intern_floats_01.png'];
+isexport = 0;
 
+super_title = ['Survival rates comparison between EA and International arrays'];
 
-%% Import  extern variables for comparisons of life expectancies   
+sample_limit = 10 %Min number of floats necessary for a model to be ploted in the final output
 
-%%% OceanOps survival rate computation
-data_AIC = readtable('/home1/datahome/co_arg/larduini/Lists/Survival Rates_2_data_1month_freq.txt');
-AIC_interval = data_AIC.Step;
-AIC_surv_rate = data_AIC.All;
+%Loading the .mat files
+for i= 1:length(var_name)
+    
+    if isempty(var_name{i})
+        continue
+    else
+        % VKms
+        surv_rate_vkm = matfile([data_folder{i} 'plot_data_verticalkm_' var_name{i} '.mat']);
+        data_surv_rate_vkm{i} = surv_rate_vkm.plot_data_verticalkm;
+        intervals_vkm = matfile([data_folder{i} 'verticalkm_intervals_' var_name{i} '.mat']);
+        data_intervals_vkm{i} = intervals_vkm.verticalkm_intervals;
 
+    %     Float age
+        surv_rate_age = matfile([data_folder{i} 'plot_data_floatage_' var_name{i} '.mat']);
+        data_surv_rate_age{i} = surv_rate_age.plot_data_floatage;
+        intervals_age = matfile([data_folder{i} 'floatage_intervals_' var_name{i} '.mat']);
+        data_intervals_age{i} = intervals_age.floatage_intervals;
+    % 
+    %     Cycles
+        surv_rate_cycle = matfile([data_folder{i} 'plot_data_cycle_' var_name{i} '.mat']);
+        data_surv_rate_cycle{i} = surv_rate_cycle.plot_data_cycle;
+        n_floats{i} = surv_rate_cycle.n_floats;
+    end
 
-%%%European all floats
-%VKms
-surv_rate_vkm_EA_all = matfile('/home1/datahome/co_arg/larduini/Exports/Survival_rates/EA_ARVOR_I/EA_ALL/EA_all_vkm_surv_rate.mat');
-data_EA_ALL_surv_rate_vkm = surv_rate_vkm_EA_all.plot_data_verticalkm;
-intervals_vkm_EA_all = matfile('/home1/datahome/co_arg/larduini/Exports/Survival_rates/EA_ARVOR_I/EA_ALL/EA_all_vkm_intervals.mat');
-data_EA_ALL_intervals_vkm = intervals_vkm_EA_all.verticalkm_intervals;
-
-%Float age
-surv_rate_age_EA_all = matfile('/home1/datahome/co_arg/larduini/Exports/Survival_rates/EA_ARVOR_I/EA_ALL/EA_all_floatage_surv_rate.mat');
-data_EA_ALL_surv_rate_age = surv_rate_age_EA_all.plot_data_floatage;
-intervals_age_EA_all = matfile('/home1/datahome/co_arg/larduini/Exports/Survival_rates/EA_ARVOR_I/EA_ALL/EA_all_floatage_intervals.mat');
-data_EA_ALL_intervals_age = intervals_age_EA_all.floatage_intervals;
-
-%Cycles
-surv_rate_cycle_EA_all = matfile('/home1/datahome/co_arg/larduini/Exports/Survival_rates/EA_ARVOR_I/EA_ALL/EA_all_cycle_surv_rate.mat');
-data_EA_ALL_surv_rate_cycle = surv_rate_cycle_EA_all.plot_data_cycle;
-
-
-%%% European Arvor_I Open Ocean
-%VKms
-surv_rate_vkm_openocean = matfile('/home1/datahome/co_arg/larduini/Exports/Survival_rates/EA_ARVOR_I/EA_ARVOR_I_openocean/surv_rate_vkm_ea_arvor_I_openocean.mat');
-data_EA_Arvor_I_surv_rate_vkm_open = surv_rate_vkm_openocean.plot_data_verticalkm;
-intervals_vkm_openocean = matfile('/home1/datahome/co_arg/larduini/Exports/Survival_rates/EA_ARVOR_I/EA_ARVOR_I_openocean/intervals_vkm_ea_arvor_I_openocean.mat');
-data_EA_Arvor_I_intervals_vkm_open = intervals_vkm_openocean.verticalkm_intervals;
-
-%Float age
-surv_rate_age_openocean = matfile('/home1/datahome/co_arg/larduini/Exports/Survival_rates/EA_ARVOR_I/EA_ARVOR_I_openocean/surv_rate_age_ea_arvor_I_openocean.mat');
-data_EA_Arvor_I_surv_rate_age_open = surv_rate_age_openocean.plot_data_floatage;
-intervals_age_openocean = matfile('/home1/datahome/co_arg/larduini/Exports/Survival_rates/EA_ARVOR_I/EA_ARVOR_I_openocean/intervals_age_ea_arvor_I_openocean.mat');
-data_EA_Arvor_I_intervals_age_open = intervals_age_openocean.floatage_intervals;
-
-%Cycles
-surv_rate_cycle_openocean = matfile('/home1/datahome/co_arg/larduini/Exports/Survival_rates/EA_ARVOR_I/EA_ARVOR_I_openocean/surv_rate_cycle_ea_arvor_I_openocean.mat');
-data_EA_Arvor_I_surv_rate_cycle_open = surv_rate_cycle_openocean.plot_data_cycle;
-
-%%% European Arvor_I Marginal Seas
-%VKms
-surv_rate_vkm_marginal = matfile('/home1/datahome/co_arg/larduini/Exports/Survival_rates/EA_ARVOR_I/EA_ARVOR_I_marginal_seas/EA_ARVOR_I_vkm_marginalseas_surv_rate.mat');
-data_EA_Arvor_I_surv_rate_vkm_marginal = surv_rate_vkm_marginal.plot_data_verticalkm;
-intervals_vkm_marginal = matfile('/home1/datahome/co_arg/larduini/Exports/Survival_rates/EA_ARVOR_I/EA_ARVOR_I_marginal_seas/EA_ARVOR_I_vkm_marginalseas_intervals.mat');
-data_EA_Arvor_I_intervals_vkm_marginal = intervals_vkm_marginal.verticalkm_intervals;
-
-%Float age
-surv_rate_age_marginal = matfile('/home1/datahome/co_arg/larduini/Exports/Survival_rates/EA_ARVOR_I/EA_ARVOR_I_marginal_seas/EA_ARVOR_I_age_marginalseas_surv_rate.mat');
-data_EA_Arvor_I_surv_rate_age_marginal = surv_rate_age_marginal.plot_data_floatage;
-intervals_age_marginal = matfile('/home1/datahome/co_arg/larduini/Exports/Survival_rates/EA_ARVOR_I/EA_ARVOR_I_marginal_seas/EA_ARVOR_I_age_marginalseas_intervals.mat');
-data_EA_Arvor_I_intervals_age_marginal = intervals_age_marginal.floatage_intervals;
-
-%Cycles
-surv_rate_cycle_marginal = matfile('/home1/datahome/co_arg/larduini/Exports/Survival_rates/EA_ARVOR_I/EA_ARVOR_I_marginal_seas/EA_ARVOR_I_cycle_marginalseas_surv_rate.mat');
-data_EA_Arvor_I_surv_rate_cycle_marginal = surv_rate_cycle_marginal.plot_data_cycle;
-
-
-%%%European all Arvor-I
-%VKms
-surv_rate_vkm_EA_all_Arvor_I = matfile('/home1/datahome/co_arg/larduini/Exports/Survival_rates/EA_ARVOR_I/EA_ARVOR_I_ALL/EA_ARVOR_I_ALL_surv_rate_vkm.mat');
-data_EA_ALL_Arvor_I_surv_rate_vkm = surv_rate_vkm_EA_all_Arvor_I.plot_data_verticalkm;
-intervals_vkm_EA_all_Arvor_I = matfile('/home1/datahome/co_arg/larduini/Exports/Survival_rates/EA_ARVOR_I/EA_ARVOR_I_ALL/EA_ARVOR_I_ALL_intervals_vkm.mat');
-data_EA_ALL_Arvor_I_intervals_vkm = intervals_vkm_EA_all_Arvor_I.verticalkm_intervals;
-
-%Float age
-surv_rate_age_EA_all_Arvor_I = matfile('/home1/datahome/co_arg/larduini/Exports/Survival_rates/EA_ARVOR_I/EA_ARVOR_I_ALL/EA_ARVOR_I_ALL_surv_rate_age.mat');
-data_EA_ALL_Arvor_I_surv_rate_age = surv_rate_age_EA_all_Arvor_I.plot_data_floatage;
-intervals_age_EA_all_Arvor_I = matfile('/home1/datahome/co_arg/larduini/Exports/Survival_rates/EA_ARVOR_I/EA_ARVOR_I_ALL/EA_ARVOR_I_ALL_intervals_age.mat');
-data_EA_ALL_Arvor_I_intervals_age = intervals_age_EA_all_Arvor_I.floatage_intervals;
-
-%Cycles
-surv_rate_cycle_EA_all_Arvor_I = matfile('/home1/datahome/co_arg/larduini/Exports/Survival_rates/EA_ARVOR_I/EA_ARVOR_I_ALL/EA_ARVOR_I_ALL_surv_rate_cycle.mat');
-data_EA_ALL_Arvor_I_surv_rate_cycle = surv_rate_cycle_EA_all_Arvor_I.plot_data_cycle;
-
-%%%International all
-%VKms
-surv_rate_vkm_intern = matfile('/home1/datahome/co_arg/larduini/Exports/Survival_rates/EA_ARVOR_I/INTERN_ALL/intern_all_floats_surv_rate_vkm.mat');
-data_intern_surv_rate_vkm = surv_rate_vkm_intern.plot_data_verticalkm;
-intervals_vkm_intern = matfile('/home1/datahome/co_arg/larduini/Exports/Survival_rates/EA_ARVOR_I/INTERN_ALL/intern_all_floats_vkm_intervals.mat');
-data_intern_intervals_vkm = intervals_vkm_intern.verticalkm_intervals;
-
-%Float age
-surv_rate_age_intern = matfile('/home1/datahome/co_arg/larduini/Exports/Survival_rates/EA_ARVOR_I/INTERN_ALL/intern_all_floats_surv_rate_age.mat');
-data_intern_surv_rate_age = surv_rate_age_intern.plot_data_floatage;
-intervals_age_intern = matfile('/home1/datahome/co_arg/larduini/Exports/Survival_rates/EA_ARVOR_I/INTERN_ALL/intern_all_floats_age_intervals.mat');
-data_intern_intervals_age = intervals_age_intern.floatage_intervals;
-
-%Cycles
-surv_rate_cycle_intern = matfile('/home1/datahome/co_arg/larduini/Exports/Survival_rates/EA_ARVOR_I/INTERN_ALL/intern_all_floats_surv_rate_cycle.mat');
-data_intern_surv_rate_cycle = surv_rate_cycle_intern.plot_data_cycle;
-
-%%%International open ocean
-%VKms
-surv_rate_vkm_intern_open = matfile('/home1/datahome/co_arg/larduini/Exports/Survival_rates/EA_ARVOR_I/INTERN_ALL/plot_data_verticalkm_intern_open.mat');
-data_intern_surv_rate_vkm_open = surv_rate_vkm_intern_open.plot_data_verticalkm;
-intervals_vkm_intern_open = matfile('/home1/datahome/co_arg/larduini/Exports/Survival_rates/EA_ARVOR_I/INTERN_ALL/verticalkm_intervals_intern_open.mat');
-data_intern_intervals_vkm_open = intervals_vkm_intern_open.verticalkm_intervals;
-
-%Float age
-surv_rate_age_intern_open = matfile('/home1/datahome/co_arg/larduini/Exports/Survival_rates/EA_ARVOR_I/INTERN_ALL/plot_data_floatage_intern_open.mat');
-data_intern_surv_rate_age_open = surv_rate_age_intern_open.plot_data_floatage;
-intervals_age_intern_open = matfile('/home1/datahome/co_arg/larduini/Exports/Survival_rates/EA_ARVOR_I/INTERN_ALL/floatage_intervals_intern_open.mat');
-data_intern_intervals_age_open = intervals_age_intern_open.floatage_intervals;
-
-%Cycles
-surv_rate_cycle_intern_open = matfile('/home1/datahome/co_arg/larduini/Exports/Survival_rates/EA_ARVOR_I/INTERN_ALL/plot_data_cycle_intern_open.mat');
-data_intern_surv_rate_cycle_open = surv_rate_cycle_intern_open.plot_data_cycle;
-
-%%%International marginal seas
-%VKms
-surv_rate_vkm_intern_marginal = matfile('/home1/datahome/co_arg/larduini/Exports/Survival_rates/EA_ARVOR_I/INTERN_ALL/plot_data_verticalkm_intern_marginal.mat');
-data_intern_surv_rate_vkm_marginal = surv_rate_vkm_intern_marginal.plot_data_verticalkm;
-intervals_vkm_intern_marginal = matfile('/home1/datahome/co_arg/larduini/Exports/Survival_rates/EA_ARVOR_I/INTERN_ALL/verticalkm_intervals_intern_marginal.mat');
-data_intern_intervals_vkm_marginal = intervals_vkm_intern_marginal.verticalkm_intervals;
-
-%Float age
-surv_rate_age_intern_marginal = matfile('/home1/datahome/co_arg/larduini/Exports/Survival_rates/EA_ARVOR_I/INTERN_ALL/plot_data_floatage_intern_marginal.mat');
-data_intern_surv_rate_age_marginal = surv_rate_age_intern_marginal.plot_data_floatage;
-intervals_age_intern_marginal = matfile('/home1/datahome/co_arg/larduini/Exports/Survival_rates/EA_ARVOR_I/INTERN_ALL/floatage_intervals_intern_marginal.mat');
-data_intern_intervals_age_marginal = intervals_age_intern_marginal.floatage_intervals;
-
-%Cycles
-surv_rate_cycle_intern_marginal = matfile('/home1/datahome/co_arg/larduini/Exports/Survival_rates/EA_ARVOR_I/INTERN_ALL/plot_data_cycle_intern_marginal.mat');
-data_intern_surv_rate_cycle_marginal = surv_rate_cycle_intern_marginal.plot_data_cycle;
-
-
-
+end
+    
 
 %% Plotting
 disp(' ')
 disp('Plotting ...')
 
+% Creation of a mutli-color array
+% Color = {'g','r','b','m','c', 'y','k', [0 0.4470 0.7410],[0.8500 0.3250 0.0980],[0.9290 0.6940 0.1250],[0.4940 0.1840 0.5560],...
+%         [0.4660 0.6740 0.1880],[0.3010 0.7450 0.9330],[0.6350 0.0780 0.1840],[0.8 0 0.8], [0.2 0.4 0.2], [0.4 0 0], [0.2 0.4 0.6],...
+%         [0.5 0.6 0.8], [1 0.4 0.8], [0.4 0.4 0.6]};
+
+Color = {[0.4940 0.1840 0.5560],[0 0.4470 0.7410],[0.8500 0.3250 0.0980], 'g','r','b',[0.9290 0.6940 0.1250],...
+        [0.4660 0.6740 0.1880],[0.3010 0.7450 0.9330],[0.6350 0.0780 0.1840],[0.8 0 0.8], [0.2 0.4 0.2], [0.4 0 0], [0.2 0.4 0.6],...
+        [0.5 0.6 0.8], [1 0.4 0.8], [0.4 0.4 0.6]};
+
+
 % vertical km
 figure(1)
 %full screen
 set(gcf, 'Position', get(0, 'Screensize'));
+%super_title
 
-title_label1 = 'Survival rate per vertical distance traveled for the European Arvor-I and the global European array'
-% plot(data_intern_intervals_vkm, data_intern_surv_rate_vkm,'g', 'LineWidth',4, 'DisplayName', 'Survival rate for the International array');
-% hold on
-% plot(data_open_intervals_vkm, data_open_surv_rate_vkm, 'r','LineWidth',4, 'DisplayName', 'Survival rate for the open Ocean European Iridium floats');
-% hold on
-% plot(data_intern_intervals_vkm, data_intern_surv_rate_vkm,'m', 'LineWidth',4, 'DisplayName', 'Survival rate for all International Iridium floats');
-% hold on
-% plot(data_intern_intervals_vkm_open, data_intern_surv_rate_vkm_open,'b', 'LineWidth',4, 'DisplayName', 'Survival rate for open Ocean International Iridium floats');
-% hold on
-% plot(data_intern_intervals_vkm_marginal, data_intern_surv_rate_vkm_marginal,'r', 'LineWidth',2, 'DisplayName', 'Survival rate for International Iridium floats deployed marginal Seas');
-plot(data_EA_ALL_intervals_vkm, data_EA_ALL_surv_rate_vkm, 'g', 'LineWidth',4, 'DisplayName', 'Survival rate for the European Iridium array');
-hold on
-plot(data_EA_ALL_Arvor_I_intervals_vkm, data_EA_ALL_Arvor_I_surv_rate_vkm, 'm', 'LineWidth',4, 'DisplayName', 'Survival rate for the European Arvor-I floats');
-hold on
-plot(data_EA_Arvor_I_intervals_vkm_open, data_EA_Arvor_I_surv_rate_vkm_open, 'b', 'LineWidth',2, 'DisplayName', 'Survival rate for the European Arvor-I floats deployed in open Ocean');
-hold on
-plot(data_EA_Arvor_I_intervals_vkm_marginal, data_EA_Arvor_I_surv_rate_vkm_marginal, 'r', 'LineWidth',2, 'DisplayName', 'Survival rate for the European Arvor-I floats deployed in marginal Seas');
+annotation('textbox',    [0.5, 1, 0, 0], 'string', super_title, 'HorizontalAlignment', 'center', 'Fontsize', 16, 'FitBoxToText', 'on', 'Interpreter', 'none')
 
+subplot(2,2,1)
+title_label1 = 'Survival rate per cycles reached';
 
-% format
-title(title_label1, 'Interpreter', 'none', 'FontSize',18)
-lgd = legend('Location','NorthEast');
-lgd.FontSize = 18;
-xlim([0 1200])
-ylabel('Survival rate (%)','FontSize',14)
-xlabel('Vertical distance (km)','FontSize',14)
-set(gcf,'color','w')
+for i= 1:length(var_name)
+    if n_floats{i} < sample_limit
+        continue
+    else
+        plot(data_surv_rate_cycle{i}, 'LineWidth',2, 'color',Color{i}, 'DisplayName', ['Survival rate for ' var_name{i} ' floats (' num2str(n_floats{i}) ')']);
+%         xline(400,'--',{'Theoretical lifetime', 'Marginal Seas'},'color','r')
+%         xline(270,'--',{'Theoretical lifetime', 'Open Ocean'},'color','b')
 
-fig_path = [output_folder '/' 'SurvivalRate_EA_Arvor_I_vkm.png'];
-export_fig(fig_path)
-
-% float age
-figure(2)
-%full screen
-set(gcf, 'Position', get(0, 'Screensize'));
-
-title_label2 = 'Survival rate per age reached for the global European Iridium array and the European Arvor-I floats'
-% plot(data_intern_intervals_age, data_intern_surv_rate_age,'g', 'LineWidth',4, 'DisplayName', 'Survival rate for the International array');
-% hold on
-% plot(data_open_intervals_age, data_open_surv_rate_age, 'r','LineWidth',4, 'DisplayName', 'Survival rate for the open Ocean European Iridium floats');
-% hold on
-% plot(data_intern_intervals_age, data_intern_surv_rate_age,'m', 'LineWidth',4, 'DisplayName', 'Survival rate for all International Iridium floats');
-% hold on
-% plot(data_intern_intervals_age_open, data_intern_surv_rate_age_open,'b', 'LineWidth',4, 'DisplayName', 'Survival rate for open Ocean International Iridium floats');
-% hold on
-% plot(data_intern_intervals_age_marginal, data_intern_surv_rate_age_marginal,'r', 'LineWidth',2, 'DisplayName', 'Survival rate for International Iridium floats deployed marginal Seas');
-plot(data_EA_ALL_intervals_age, data_EA_ALL_surv_rate_age, 'g', 'LineWidth',4, 'DisplayName', 'Survival rate for the European Iridium array');
-hold on
-plot(data_EA_ALL_Arvor_I_intervals_age, data_EA_ALL_Arvor_I_surv_rate_age, 'm', 'LineWidth',4, 'DisplayName', 'Survival rate for the European Arvor-I floats');
-hold on
-plot(data_EA_Arvor_I_intervals_age_open, data_EA_Arvor_I_surv_rate_age_open, 'b', 'LineWidth',2, 'DisplayName', 'Survival rate for the European Arvor-I floats deployed in open Ocean');
-hold on
-plot(data_EA_Arvor_I_intervals_age_marginal, data_EA_Arvor_I_surv_rate_age_marginal, 'r', 'LineWidth',2, 'DisplayName', 'Survival rate for the European Arvor-I floats deployed in marginal Seas');
+    end
+    hold on
+    
+end
 
 % format
-title(title_label2, 'Interpreter', 'none', 'FontSize',18)
-lgd = legend('Location','NorthEast');
-lgd.FontSize = 18;
-xlim([0 8])
-ylabel('Survival rate (%)','FontSize',14)
-xlabel('Age reached (years)','FontSize',14)
-set(gcf,'color','w')
-
-fig_path = [output_folder '/' 'SurvivalRate_EA_Arvor_I_age.png'];
-export_fig(fig_path)
-
-% number of cycles
-figure(3)
-%full screen
-set(gcf, 'Position', get(0, 'Screensize'));
-
-
-title_label3 = 'Survival rate per cycles reached for the global European Iridium array and the European Arvor-I floats'
-
-% plot(data_intern_surv_rate_cycle,'g', 'LineWidth',4, 'DisplayName', 'Survival rate for the International array');
-% hold on
-% plot(data_open_surv_rate_cycle, 'r','LineWidth',4, 'DisplayName', 'Survival rate for the European Iridium floats deployed the open Ocean');
-% hold on
-% plot(data_intern_surv_rate_cycle,'m', 'LineWidth',4, 'DisplayName', 'Survival rate for all International Iridium floats');
-% hold on
-% plot(data_intern_surv_rate_cycle_open,'b', 'LineWidth',4, 'DisplayName', 'Survival rate for open Ocean International Iridium floats');
-% hold on
-% plot(data_intern_surv_rate_cycle_marginal,'r', 'LineWidth',2, 'DisplayName', 'Survival rate for International Iridium floats deployed in marginal Seas');
-plot(data_EA_ALL_surv_rate_cycle, 'g', 'LineWidth',4, 'DisplayName', 'Survival rate for the European Iridium array');
-hold on
-plot(data_EA_ALL_Arvor_I_surv_rate_cycle, 'm', 'LineWidth',4, 'DisplayName', 'Survival rate for the European Arvor-I floats');
-hold on
-plot(data_EA_Arvor_I_surv_rate_cycle_open, 'b', 'LineWidth',2, 'DisplayName', 'Survival rate for the European Arvor-I floats deployed in open Ocean');
-hold on
-plot(data_EA_Arvor_I_surv_rate_cycle_marginal, 'r', 'LineWidth',2, 'DisplayName', 'Survival rate for the European Arvor-I floats deployed in marginal Seas');
-
-% format
-title(title_label3, 'Interpreter', 'none', 'FontSize',18)
-lgd = legend('Location','NorthEast');
-lgd.FontSize = 18;
-xlim([0 500])
-ylabel('Survival rate (%)','FontSize',14)
-xlabel('Cycle number reached','FontSize',14)
+title(title_label1, 'Interpreter', 'none', 'FontSize',12)
+% lgd = legend('Location','NorthEast','Interpreter', 'none');
+% lgd.FontSize = 11;
+xlim([0 450])
+ylabel('Survival rate (%)','FontSize',10)
+xlabel('Cycle number reached','FontSize',10)
 set(gcf,'color','w')
 
 
-fig_path = [output_folder '/' 'SurvivalRate_EA_Arvor_I_cycle.png'];
-export_fig(fig_path)
+subplot(2,2,2)
+title_label2 = 'Survival rate per age reached';
+
+for i= 1:length(var_name)
+    if n_floats{i} < sample_limit
+        continue
+    else
+        plot(data_intervals_age{i}, data_surv_rate_age{i}, 'LineWidth',2, 'color', Color{i}, 'DisplayName', ['Survival rate for ' var_name{i} ' floats (' num2str(n_floats{i}) ')']);
+    end
+    hold on
+end
+
+% format
+title(title_label2, 'Interpreter', 'none', 'FontSize',12)
+% lgd = legend('Location','NorthEast','Interpreter', 'none');
+% lgd.FontSize = 11;
+xlim([0 6])
+ylabel('Survival rate (%)','FontSize',10)
+xlabel('Age reached (years)','FontSize',10)
+set(gcf,'color','w')
 
 
+subplot(2,2,3:4)
+title_label3 = 'Survival rate per vertical distance traveled';
+
+for i= 1:length(var_name)
+    if n_floats{i} < sample_limit
+        continue
+    else
+        plot(data_intervals_vkm{i}, data_surv_rate_vkm{i}, 'LineWidth',2, 'color', Color{i},'DisplayName', ['Survival rate for ' var_name{i} ' floats (' num2str(n_floats{i}) ')']);
+%         xline(1080,'LineWidth',2, 'color','r','LineStyle','--','DisplayName','coucou')
+    end
+    hold on
+end
+
+% format
+title(title_label3, 'Interpreter', 'none', 'FontSize',12)
+lgd = legend('Location','eastoutside','Interpreter', 'none');
+lgd.FontSize = 11;
+xlim([0 1600])
+ylabel('Survival rate (%)','FontSize',10)
+xlabel('Vertical distance (km)','FontSize',10)
+set(gcf,'color','w')
 
 
-
+if isexport == 1
+    export_fig(fig_path)
+end
 
